@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <!--框架-->
+    <link rel="stylesheet" href="../core/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../plugins/bootstrap-dialog/bootstrap-dialog.min.css">
+    <!--样式重置库-->
+    <link rel="stylesheet" href="../css/base/reset.css">
+    <!--通用库-->
+    <link rel="stylesheet" href="../css/base/common.css">
+    <!--基础库-->
+    <link rel="stylesheet" href="../css/base/base.css">
+    <!--主页样式-->
+    <link rel="stylesheet" href="../css/index/index.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+<body class="index-bg">
+<div class="container">
+    <!--头部-->
+    <header class="header">
+        <img class="header-logo pull-left" src="../img/small-logo.png" alt="logo">
+        <div class="btn-action">
+            <a href="user-manager.html" class="btn btn-primary"><i class="fa fa-user-o"></i>用户管理</a>
+            <a href="add-training-camp.html" class="btn btn-primary ml10"><i class="fa fa-plus"></i>添加训练营</a>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    小丽 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="modify-password.html"><i class="fa fa-edit"></i>修改密码</a></li>
+                    <li><a href="login.html"><i class="fa  fa-sign-out"></i>退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="row index-content js-index-content">
+        <!--训练营-->
+        <ul>
+            <li class="list-unstyled item1">
+                <section class="col-lg-3 col-md-6 col-sm-6 col-xs-12 index-item">
+                    <div class="training-camp">
+                        <div class="training-camp-img"></div>
+                        <div class="training-camp-title">
+                            <h3 class="pull-left">JSD</h3>
+                            <div class="action text-right mr10">
+                                <a href="add-training-camp.html" class="btn btn-primary"><i class="fa fa-edit"></i>编辑</a>
+                                <a href="#" class="btn btn-danger js-del-train-camp"><i class="fa fa-trash"></i>删除</a>
+                            </div>
+                        </div>
+                        <!--教师信息-->
+                        <div class="teacher">
+                            <div class="row">
+                                <div class="col-xs-12 teacher-info text-left">
+                                    <div class="teacher-item">
+                                        <span class="">讲 师 姓 名：</span>
+                                        <span class="">小明</span>
+                                    </div>
+                                    <div class="teacher-item">
+                                        <span class="">讲 师 电 话：</span>
+                                        <span>13666666666</span>
+                                    </div>
+                                    <div class="teacher-item">
+                                        <span class="">所属产品线：</span>
+                                        <span>JSD</span>
+                                    </div>
+                                    <div class="teacher-item">
+                                        <span class="">创 建 时 间：</span>
+                                        <span>2017-10-10</span>
+                                    </div>
+                                    <div class="teacher-item">
+                                        <span class="">班 级 人 数：</span>
+                                        <span>100人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </li>
+        </ul>
+
+    </section>
+</div>
+<script src="../core/jquery-1.11.3.js"></script>
+<script src="../core/bootstrap/bootstrap.min.js"></script>
+<script src="../plugins/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+<script src="../plugins/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="../js/nicescroll.js"></script>
+<script src="../js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mgsystem.user.dao.TrainingCampDao">
+	<insert id="insertTrainingCamp">
+		insert into trainingcamp 
+		(state,classroomNumber,teacherName,teacherPhone,
+		productLine,classType,cadetNumber,
+		createdUser,modifyUser) 
+		values(#{TrainingCamp.state},
+		#{TrainingCamp.classroomNumber},#{TrainingCamp.teacherName},#{TrainingCamp.teacherPhone},
+		#{TrainingCamp.productLine},#{TrainingCamp.classType},#{TrainingCamp.cadetNumber},
+		#{TrainingCamp.createdUser},#{TrainingCamp.modifyUser})
+	</insert>
+	<select id="findTrainingCampByid" resultType="cn.tedu.mgsystem.user.entity.TrainingCamp">
+		select * from trainingcamp where id=#{id}
+	</select> 
+	
+	<select id="findTrainingCampByClassNumber" resultType="cn.tedu.mgsystem.user.entity.TrainingCamp">
+		select 
+		id,state,classroomNumber,teacherName,teacherPhone,
+		productLine,classType,cadetNumber,createdTime,
+		modifyTime,createdUser,modifyUser 
+		from trainingcamp where classroomNumber=#{classroomNumber}
+	</select>
+	
+	<delete id="deleteTrainingCamp">
+		delete from trainingcamp where id=#{id}
+	</delete>
+	
+	<update id="updateTrainingCamp">
+		update trainingcamp set state=#{TrainingCamp.state},
+		classroomNumber=#{TrainingCamp.classroomNumber},teacherName=#{TrainingCamp.teacherName},
+		teacherPhone=#{TrainingCamp.teacherPhone},productLine=#{TrainingCamp.productLine},classType=#{TrainingCamp.classType},
+		cadetNumber=#{TrainingCamp.cadetNumber},
+		createdUser=#{TrainingCamp.createdUser},
+		modifyUser=#{TrainingCamp.modifyUser} 
+		where id=#{TrainingCamp.id}
+	</update>
+	
+	<select id="findAll" 
+        resultType="cn.tedu.mgsystem.user.entity.TrainingCamp">
+        select * from trainingcamp
+    </select>
+	
+	
+</mapper> 
