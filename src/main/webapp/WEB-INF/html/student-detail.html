@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建学员</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <link rel="stylesheet" href="../css/base/base.css">
+    <link rel="stylesheet" href="../core/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/base/common.css">
+    <link rel="stylesheet" href="../css/add-training-camp/add-training-camp.css">
+    <link rel="stylesheet" href="../css/user-manager/user-manager.css">
+    <link rel="stylesheet" href="../css/base/reset.css">
+    <link rel="stylesheet" href="../css/add-student/add-student.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body class="add-student-bg">
+<div class="clearfix student-wrap">
+    <header class="header text-right header-container">
+        <img class="header-logo pull-left" src="../img/small-logo.png" alt="logo">
+        <div class="btn-action">
+            <a href="user-manager.html" class="btn btn-primary"><i class="fa fa-user-o"></i>用户管理</a>
+            <a href="add-training-camp.html" class="btn btn-primary ml10"><i class="fa fa-plus"></i>添加训练营</a>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    小丽 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="modify-password.html"><i class="fa fa-edit"></i>修改密码</a></li>
+                    <li><a href="login.html"><i class="fa  fa-sign-out"></i>退出登录</a></li>
+                </ul>
+            </div>
+            <a href="#"  class="btn btn-primary ml10 index-back" ><i class="fa fa-angle-left"></i>返回</a>
+        </div>
+    </header>
+    <div class="mt30 w clearfix">
+        <div class="seat  col-xs-12">
+            <h2 class="text-center seat-title mb30 mt30">座位表</h2>
+
+            <div class="list-unstyled seat-list clearfix" id="js-seat-list">
+                <ul class="seat-left pull-left list-unstyled" id="js-seat-left">
+                </ul>
+                <ul class="seat-right pull-right list-unstyled" id="js-seat-right">
+                </ul>
+
+            </div>
+        </div>
+        <form>
+        <div class="student-detail col-xs-12">
+            <h2 class="text-center mb30 mt30 student-info-title js-info-title">学员详细信息</h2>
+            <section id="js-student-detail">
+                <div class="student-detail-txt">
+                    <span>座位编号：</span>
+                    <input type="text" value="0001" class="js-seat-num" disabled>
+                </div>
+                <div class="hidden js-select-stage mb10">
+                    <span class="w100 text-right " style="display: inline-block">学员类型：</span>
+                    <select class="dropdown js-student-type">
+                        <option value="">请选择学员类型</option>
+                        <option value="A" name="on">A</option>
+                        <option value="B" name="on">B</option>
+                        <option value="C" name="on">C</option>
+                        <option value="D" name="on">D</option>
+                    </select>
+                </div>
+                <div class="student-detail-txt">
+                    <span>学员姓名：</span>
+                    <input type="text" value="张飞" class="js-student-name" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>咨询师：</span>
+                    <input type="text" value="刘备" class="js-teacher-name" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>学&emsp;&emsp;历：</span>
+                    <input type="text" value="小学" class="js-certificate" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>专&emsp;&emsp;业：</span>
+                    <input type="text" value="武术" class="js-major" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>是否有基础：</span>
+                    <input type="text" value="是" class="js-is-primary" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>信息来源：</span>
+                    <input type="text" value="google" class="js-source" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>面资情况：</span>
+                    <input type="text" value="0001" class="js-situation" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>学习时长：</span>
+                    <input type="text" value="3小时04分" class="js-study-time" disabled>
+                </div>
+                <div class="student-detail-txt">
+                    <span>阶&emsp;&emsp;段：</span>
+                    <input type="text" value="第二阶段" class="js-stage" disabled>
+
+                </div>
+                <div class="hidden js-select-stage ">
+                    <span class="w100 text-right " style="display: inline-block">阶&emsp;&emsp;段：</span>
+                    <select class="dropdown " >
+                        <!--<option >请选择阶段</option>-->
+                        <option value="1"name="on">Option 1</option>
+                        <option value="2"name="on">Option 2</option>
+                        <option value="3"name="on">Option 3</option>
+                        <option value="4"name="on">Option 4</option>
+                    </select>
+                </div>
+                <div class="mt30 text-center">
+                    <button class="btn btn-primary b  btn-sm" id="js-edit-seat-info"><i class="edit-icon"></i>编辑座位信息
+                    </button>
+                    <button class="btn btn-danger  btn-sm"><i class="cancel-seat-icon"></i>取消订座</button>
+                    <button class="btn btn-danger  btn-sm"><i class="cancel-seat-icon"></i>移除该座位</button>
+                </div>
+            </section>
+        </div>
+        </form>
+    </div>
+</div>
+<script src="../core/jquery-1.11.3.js"></script>
+<script src="../core/bootstrap/bootstrap.min.js"></script>
+<script src="../plugins/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="../core/bootstrap/bootstrap.min.js"></script>
+<script src="../js/nicescroll.js"></script>
+<script src="../js/student-detail.js"></script>
+<script src="../plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script>
+    $(function () {
+        //日历控件
+        var data = new Date();
+        $(".js-study-time").datetimepicker({
+            format: 'yyyy-mm-dd hh:ii',//显示的日期时间格式,
+            language: 'zh-CN',//中文
+            autoclose:true,//自动关闭
+            todayBtn: true,
+            minView:2,
+            startData:data
+            
+        });
+
+        //获取下拉框选中的值
+        $(".js-student-type").change(function () {
+            var studentTypeVal = $(this).children('option:selected').val();
+//            console.log(studentTypeVal);
+        })
+        
+        console.log($("form").serialize());
+        $.ajax({
+        	url:'',
+        	type:"POST",
+        	data:{
+        		$("form").serialize()
+        	},
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mgsystem.user.dao.UserDao">
+	<select id="findAllTeacher" resultType="cn.tedu.mgsystem.user.entity.User">
+		SELECT * FROM USER WHERE POSITION!='管理员'
+	</select>
+	<select id="findByAccount" parameterType="string"
+		resultType="cn.tedu.mgsystem.user.entity.User">
+		select * from user where account=#{account}
+	</select>
+	<select id="findById" parameterType="integer"
+		resultType="cn.tedu.mgsystem.user.entity.User">
+		select * from user where id=#{id}
+	</select>
+	<insert id="insertUser">
+		insert into user(account,password,name,sex,enumber,state,skillDirection,ip,deptno,position,entryTime,loginTime,email,userPhone,createdUser,modifyUser)
+		 values (#{user.account},#{user.password},#{user.name},#{user.sex},#{user.enumber},#{user.state},
+		 #{user.skillDirection},#{user.ip},#{user.deptno},#{user.position},#{user.entryTime},#{user.loginTime},#{user.email},#{user.userPhone},#{user.createdUser},#{user.modifyUser})
+	</insert>
+	
+	
+	<delete id="deleteUser" parameterType="Integer">
+		delete from user where id=#{id}
+	</delete>
+	<update id="updateUser">
+		update user set name=#{user.name},sex=#{user.sex},enumber=#{user.enumber},account=#{user.account},password=#{user.password},
+		 position=#{user.position},skillDirection=#{user.skillDirection},ip=#{user.ip},deptno=#{user.deptno},state=#{user.state},userPhone=#{user.userPhone},
+		 email=#{user.email},entryTime=#{user.entryTime},loginTime=#{user.loginTime},createdUser=#{user.createdUser},modifyUser=#{user.modifyUser}
+		where id=#{user.id}
+	</update>
+	<!-- 查询用户权限 -->
+<!-- 	<select id="findUserPermissions"
+	        parameterType="integer" 
+	        resultType="string">
+		select 	m.info 
+		from userpermission up,user u ,permission m
+		where up.userId = u.id and up.permissionId = m.id 
+		and	u.id = #{id}
+	</select> -->
+	
+	<!-- 查询用户职位 -->
+	<select id="findPositionById"
+	        parameterType="integer" 
+	        resultType="string">
+		select position from user where id=#{id}
+	</select>
+	
+    <!-- 动态SQL
+       1)何为动态SQL
+       2)动态SQL应用场景
+       3)动态SQL的实现方式有哪些
+    -->
+	<sql id="queryWhereId">
+          <where>
+             <if test="position!=null and position!=''">
+                 position !='管理员'
+             </if>
+          </where>
+    </sql>
+	<!-- 分页查询 -->
+	<select id="findPageUsers" resultType="cn.tedu.mgsystem.user.entity.User">
+		select * from user
+		where position!='管理员'
+		order by ${orderBy} desc
+		limit #{startIndex},#{pageSize}
+	</select>
+	<select id="getRowCount"
+            resultType="int">
+         select count(*)
+         from user
+         where position!='管理员'
+    </select>
+    
+    <!-- 批量删除用户 -->
+    <delete id="batchDelUser">
+        delete from user where id in
+        <foreach item="empnoItem" collection="ids" open="(" separator="," close=")">
+            #{empnoItem}
+        </foreach>
+    </delete>
+</mapper> 

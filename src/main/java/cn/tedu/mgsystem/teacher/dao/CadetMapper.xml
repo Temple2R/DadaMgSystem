@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mgsystem.teacher.dao.CadetDao">
+	<insert id="insertCadet"  useGeneratedKeys="true" keyProperty="id">
+		insert into cadet 
+		(type ,seatNumber,name,conTeacher,educational,profession,
+		isbasics,source,info,learningTime,
+		stage,createdUser,modifyUser) 
+		values
+		(#{type},#{seatNumber},#{name},#{conTeacher},#{educational},#{profession},
+		#{isbasics},#{source},#{info},
+		#{learntime},#{stage},#{createdUser},
+		#{modifyUser})
+	</insert>	
+	<!-- 
+	<insert id="insertCadet"useGeneratedKeys="true" keyProperty="id">
+		insert into cadet 
+		(type ,seatNumber,name,conTeacher,educational,profession,
+		isbasics,source,info,learningTime,
+		stage,createdUser,modifyUser) 
+		values
+		(#{type},#{seatNumber},#{name},#{conTeacher},#{educational},#{profession},
+		#{isbasics},#{source},#{info},
+		#{learntime},#{stage},#{createdUser},
+		#{modifyUser})
+	</insert>  -->
+	<!-- 修改插入语句 -->
+	<!-- <insert id="insertCadet" useGeneratedKeys="true" keyProperty="id"  
+				parameterType="cn.tedu.mgsystem.teacher.entity.Cadet" >
+   		insert into cadet
+   		(type ,seatNumber,name,conTeacher,educational,profession,
+		isbasics,source,info,learningTime,
+		stage,createdUser,modifyUser) 
+		 values 
+		 (#{cadet.type},#{cadet.seatNumber},#{cadet.name},#{cadet.conTeacher},#{cadet.educational},#{cadet.profession},
+		#{cadet.isbasics},#{cadet.source},#{cadet.info},
+		#{cadet.learntime},#{cadet.stage},#{cadet.createdUser},
+		#{cadet.modifyUser})
+  	 <selectKey resultType="long" order="AFTER" keyProperty="id">
+		SELECT LAST_INSERT_ID() AS id
+  	 </selectKey> 
+	</insert> -->
+	<update id="updateCadet">
+		update cadet set type=#{cadet.type}, seatNumber=#{cadet.seatNumber},
+		name=#{cadet.name},conTeacher=#{cadet.conTeacher},educational=#{cadet.educational},profession=#{cadet.profession},
+		isbasics=#{cadet.isbasics},source=#{cadet.source},info=#{cadet.info},learningTime=#{cadet.learntime},
+		stage=#{cadet.stage}
+		where id=#{cadet.id}
+	</update>
+	
+	<select id="findCadetById" resultType="cn.tedu.mgsystem.teacher.entity.Cadet">
+		select * from cadet where id=#{id}
+	</select>
+	
+	
+	<delete id="deleteCadet">
+		delete from cadet where id=#{id}
+	</delete>
+	
+	
+	
+</mapper>
+
+

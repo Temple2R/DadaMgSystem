@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mgsystem.teacher.dao.SeatDao">
+
+	
+	<select id="findSeatByCampId" resultType="cn.tedu.mgsystem.teacher.entity.Seat">
+		select * from seat where trainingCampid=#{trainingCampid}
+	</select>
+	
+	<insert id="insertSeat">
+		insert into seat (trainingCampId,seatNumber,cadetId,cadetName,seatState,createdTeacher,modifyTeacher
+		) 
+		values(#{seat.trainingCampId},#{seat.seatNumber},#{seat.cadetId},#{seat.cadetName},#{seat.seatState},#{seat.createdTeacher},#{seat.modifyTeacher}
+		)
+	</insert>
+	
+	<delete id="deleteSeatByCadetId" parameterType="Integer">
+		delete from seat where cadetId=#{cadetId}
+	</delete>
+	<delete id="deleteSeatById" parameterType="Integer">
+		delete from seat where id=#{id}
+	</delete>
+	<update id="updateSeat">
+		update seat set 
+		trainingCampId=#{seat.trainingCampId},seatNumber=#{seat.seatNumber},createdTeacher=#{seat.createdTeacher},
+		modifyTeacher=#{seat.modifyTeacher},cadetId=#{seat.cadetId},cadetName=#{seat.cadetName},
+		seatState=#{seat.seatState} where cadetId=#{seat.cadetId}
+	</update>
+	
+</mapper> 
