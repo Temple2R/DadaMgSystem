@@ -48,9 +48,12 @@ public class SeatServiceImpl implements ISeatService{
 			isolation=Isolation.REPEATABLE_READ,
 			rollbackFor=ServiceException.class)
 	@Override
-	public Integer updateSeat(Seat seat) {
-		if(seat==null) 
-			throw new ServiceException("座位不存在！");
+	public Integer updateSeat(Cadet cadet,int trainingCampId) {
+		Seat seat=new Seat();
+		seat.setTrainingCampId(trainingCampId);
+		seat.setCadetId(cadet.getId());
+		seat.setSeatNumber(cadet.getSeatNumber());
+		seat.setCadetName(cadet.getName());
 		return dao.updateSeat(seat);
 	}
 	@Transactional(propagation=Propagation.REQUIRED,

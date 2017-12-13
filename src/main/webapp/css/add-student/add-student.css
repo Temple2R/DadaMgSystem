@@ -113,7 +113,7 @@ input[disabled] {
     float: left;
     width: 630px;
     background: #6ab7ff;
-    height: 650px;
+    //height: 650px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px; }
     .student-wrap .seat .seat-title {

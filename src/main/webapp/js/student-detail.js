@@ -76,7 +76,7 @@ $(()=> {
             $("#js-seat-left").html(html1);
             // 动态生成右侧座位数
             for (let i = 0; i < rightNum; i++) {
-                html2 += ` <li><div class='student-item'data-id='-1'></div><p class='student-name'data-id='${i+11}'>空位</p></li>`;
+                html2 += ` <li><div class='student-item'data-id='-1'></div><p class='student-name'data-id='${i+14}'>空位</p></li>`;
             }
             $("#js-seat-right").width(rightWidth);
             $("#js-seat-right").html(html2);
@@ -202,7 +202,6 @@ $(()=> {
     	    //提交编辑信息
     	    $('#js-edit-seat-info').on('click',function(){
     	    	var params={
-    	    	"id":$("#id").val(),//学员id
     	    	"type":$(".js-student-type").val(),//学员类型
     	        "seatNumber":$(".js-seat-num").val(),//座位号
         		"name":$(".js-student-name").val(),//学生名字
@@ -216,6 +215,10 @@ $(()=> {
         		"trainingCampId":id
     	    	};
     	    	console.log($('#js-edit-seat-info').html());
+    	    	if($(".js-seat-num").val()==null||$(".js-seat-num").val()==""){
+    	    		alert("请选择座位！");
+    	    		location.href="toCamp.do?id="+id;
+    	    	}
     	    	if($('#js-edit-seat-info').html()=='编辑订座'){
     	    		var cadetId=$('#js-edit-seat-info').attr('data-id')
 //    	    		alert("cadetId:"+cadetId);
@@ -230,7 +233,7 @@ $(()=> {
     	    				}
     	    			});
     	    		}else{
-    	    			debugger
+    	    			params.id=$("#id").val();//学员id
     	    			var url="toChangeCadet.do";
     	    			$.post(url,params,function(result){
     	    				console.log(result);

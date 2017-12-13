@@ -24,6 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </head>
 <body class="index-bg">
+  <%    
+          if(session.getAttribute("user") == null) {      
+   %>    
+          <script type="text/javascript" language="javascript">        
+            alert("您还没有登录，请登录...");   
+            top.location.href="toLogin.do";  
+           </script>   
+   <%    
+       }    
+   %>
 <div class="container ">
     <header class="header">
         <img class="header-logo pull-left" src="<%=basePath %>img/small-logo.png" alt="logo">

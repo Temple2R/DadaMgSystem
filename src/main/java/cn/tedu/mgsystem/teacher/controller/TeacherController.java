@@ -55,9 +55,10 @@ public class TeacherController {
 	}
 	@RequestMapping("/toChangeCadet.do")
 	@ResponseBody
-	public JsonResult ChangeCadet(Cadet cadet){
+	public JsonResult ChangeCadet(Cadet cadet,int trainingCampId){
 		System.out.println("我要修改这个学生:"+cadet);
 		cadetService.updateCadet(cadet);
+		seatService.updateSeat(cadet, trainingCampId);
 		return new JsonResult();
 	}
 	@RequestMapping("/toDelCadet.do")

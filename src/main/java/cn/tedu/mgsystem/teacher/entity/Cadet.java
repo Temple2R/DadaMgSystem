@@ -20,7 +20,7 @@ public class Cadet implements Serializable{
 	private String conTeacher;//咨询师
 	private String educational;//教育水平
 	private String profession;//专业
-	private Integer isbasics;//是否有基础
+	private String isbasics;//是否有基础
 	private String source;//信息来源
 	private String info;//面资信息
 	private Date learntime;//学习时长
@@ -73,10 +73,10 @@ public class Cadet implements Serializable{
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
-	public Integer getIsbasics() {
+	public String getIsbasics() {
 		return isbasics;
 	}
-	public void setIsbasics(Integer isbasics) {
+	public void setIsbasics(String isbasics) {
 		this.isbasics = isbasics;
 	}
 	public String getSource() {

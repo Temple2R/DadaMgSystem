@@ -27,7 +27,7 @@ CREATE TABLE `cadet` (
   `conTeacher` varchar(255) DEFAULT NULL,
   `educational` varchar(255) DEFAULT NULL,
   `profession` varchar(255) DEFAULT NULL,
-  `isbasics` int(1) DEFAULT NULL,
+  `isbasics` varchar(255) DEFAULT NULL,
   `source` varchar(255) DEFAULT NULL,
   `info` varchar(255) DEFAULT NULL,
   `learningTime` datetime DEFAULT NULL,

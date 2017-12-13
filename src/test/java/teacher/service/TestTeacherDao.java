@@ -31,7 +31,7 @@ public class TestTeacherDao {
 		c.setConTeacher("老师好");
 		c.setEducational("本科");
 		c.setProfession("软件工程");
-		c.setIsbasics(1);
+		c.setIsbasics("1");
 		c.setSource("别人介绍的");
 		c.setInfo("有基础但不是很厉害！");
 		c.setLearntime(new Date());

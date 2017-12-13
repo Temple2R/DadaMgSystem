@@ -30,6 +30,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 </head>
 <body class="index-bg">
+  <%    
+          if(session.getAttribute("user") == null) {      
+   %>    
+          <script type="text/javascript" language="javascript">        
+            alert("您还没有登录，请登录...");   
+            top.location.href="toLogin.do";  
+           </script>   
+   <%    
+       }    
+   %>
 <div class="container">
     <!--头部-->
     <header class="header">

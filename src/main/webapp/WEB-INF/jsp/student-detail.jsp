@@ -22,6 +22,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="<%=basePath %>font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body class="add-student-bg">
+   <%    
+          if(session.getAttribute("user") == null) {      
+   %>    
+          <script type="text/javascript" language="javascript">        
+            alert("您还没有登录，请登录...");   
+            top.location.href="toLogin.do";  
+           </script>   
+   <%    
+       }    
+   %>    
 <div class="clearfix student-wrap container">
     <header class="header text-right " id="js-u-m-header">
         <img class="header-logo pull-left" src="<%=basePath %>img/small-logo.png" alt="logo">
@@ -98,8 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="hidden js-select-stage " >
                     <span class="w100 text-right " style="display: inline-block">信息来源：</span>
                     <select class="dropdown " id="tt">
-                        <!--<option >请选择阶段</option>-->
-                        <option value="">求职</option>
+                        <option value="求职">求职</option>
                         <option value="竞价">竞价</option>
                         <option value="口碑">口碑</option>
                     </select>
@@ -120,7 +129,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="hidden js-select-stage " >
                     <span class="w100 text-right " style="display: inline-block">阶&emsp;&emsp;段：</span>
                     <select class="dropdown " id="dd">
-                        <!--<option >请选择阶段</option>-->
                         <option value="试听">试听</option>
                         <option value="关单">关单</option>
                         <option value="报名">报名</option>

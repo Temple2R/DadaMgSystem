@@ -65,7 +65,7 @@ input[disabled] {
       float: left;
       width: 630px;
       background: #6ab7ff;
-      height: 650px;
+      //height: 650px;
       @include border-left(10px);
 
       .seat-title {
