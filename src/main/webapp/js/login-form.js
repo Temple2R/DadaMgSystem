@@ -44,6 +44,7 @@ var BaseFormValidation = function () {
         });
     };
 
+
     return {
         init: function () {
             initValidationMaterial();
