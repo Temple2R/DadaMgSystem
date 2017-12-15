@@ -75,9 +75,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <span>班 级 人 数：</span>
                 <input type="text" class="input-txt" name="cadetNumber" value="${camp.cadetNumber==null?0:camp.cadetNumber }" placeholder="0" readonly="readonly">
             </div>
-            <div class="input-bg">
-                <span>班 级 类 型：</span>
-                <input type="text" class="input-txt" name="classType" value="${camp.classType }" placeholder="请输入班级类型">
+            <%--<div class="input-bg">--%>
+                <%--<span>班 级 类 型：</span>--%>
+                <%--<input type="text" class="input-txt" name="classType" value="${camp.classType }" placeholder="请输入班级类型">--%>
+            <%--</div>--%>
+            <%--jian add--%>
+
+            <div class="input-bg form-group class-type" id="j-class-type">
+                <label>班 级 类 型：</label>
+                <div class="dib">
+                    <input type="radio" name="iCheck" value="0">
+                    <img class="class-type-img" src="../../img/seat-1.png" alt="班级类型">
+                </div>
+                <div class="dib fr">
+                    <input type="radio" name="iCheck" value="1">
+                    <img class="class-type-img" src="../../img/seat-2.png" alt="班级类型">
+                </div>
             </div>
             <div class="text-center mt20">
                 <input type="submit" class="btn btn-primary mr20" value='${requestScope.camp==null?"创建":"修改"}'>
@@ -109,5 +122,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         });
     });
 </script> -->
+<script>
+    $(function () {
+        // 自定义checkbox
+        $(("#j-class-type input")).iCheck({
+            radioClass: 'iradio_flat-blue',
+        });
+
+//        获取点击radio的值
+        $(("#j-class-type input")).on('ifChecked', function(){
+            console.log($(this).val());
+        });
+    })
+</script>
 </body>
 </html>
