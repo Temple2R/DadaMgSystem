@@ -83,6 +83,19 @@
 .dropdown-menu {
   min-width: 100px; }
 
+.help-block {
+  margin-bottom: 0; }
+
+.fa {
+  margin-right: 5px; }
+
+.select-txt {
+  background-color: transparent;
+  outline: none; }
+
+.input-txt {
+  background: none; }
+
 @media screen and (max-width: 480px) {
   .create-wrap {
     width: 100%;
@@ -99,19 +112,14 @@
     z-index: 1; }
 
   .input-bg {
+    width: 100%;
     line-height: 44px;
     height: 44px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #9c9c9c; }
-    .input-bg .input-txt {
-      border: none;
-      background: none;
-      line-height: 44px;
-      height: 44px;
-      width: 130px; } }
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #9c9c9c; } }
 @media screen and (min-width: 480px) {
   .create-wrap {
-    width: 500px;
+    width: 450px;
     margin: 30px auto 0 auto;
     box-shadow: 0 5px 30px -5px #9c9c9c;
     background: #fff;
@@ -125,17 +133,9 @@
     z-index: 1; }
 
   .input-bg {
-    background: #f0f0f0;
-    line-height: 44px;
-    height: 44px;
-    margin-bottom: 10px; }
+    width: 100%;
+    margin-bottom: 10px !important; }
     .input-bg span {
-      margin-left: 15px; }
-
-  .input-txt {
-    border: none;
-    background: none;
-    line-height: 44px;
-    height: 44px; } }
+      margin-left: 15px; } }
 
 /*# sourceMappingURL=add-training-camp.css.map */

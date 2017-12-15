@@ -1,6 +1,13 @@
 @charset "utf-8";
 @import "../base/common";
-$h44:44px;
+.select-txt{
+  background-color: transparent;
+  outline: none;
+}
+
+.input-txt {
+  background: none;
+}
 
 @media screen and(max-width: 480px) {
   .create-wrap {
@@ -19,25 +26,17 @@ $h44:44px;
   }
 
   .input-bg {
+    width: 100%;
     line-height: 44px;
     height: 44px;
-    margin-bottom: 10px;
+    margin-bottom: 10px!important;
     border-bottom: 1px solid $box-show-cd;
-
-    .input-txt {
-      border: none;
-      background: none;
-      line-height: $h44;
-      height: $h44;
-      width: 130px;
-      //background: #000;
-    }
   }
 }
 
 @media screen and(min-width: 480px) {
   .create-wrap {
-    width: 500px;
+    width: 450px;
     margin: 30px auto 0 auto;
     @include wrap-show;
     background: $fff;
@@ -52,19 +51,11 @@ $h44:44px;
   }
 
   .input-bg {
-    background: #f0f0f0;
-    line-height: $h44;
-    height: $h44;
-    margin-bottom: 10px;
+
+    width: 100%;
+    margin-bottom: 10px!important;
     span {
       margin-left: 15px;
     }
-  }
-
-  .input-txt {
-    border: none;
-    background: none;
-    line-height: $h44;
-    height: $h44;
   }
 }
