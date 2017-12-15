@@ -55,7 +55,14 @@ $(()=> {
             $("#js-seat-left").html(html1);
             // 如果座位表为左2右3 li右边距 li:nth-of-type(5n-3)
             // 如果座位表为左3右2 li右边距 li:nth-of-type(5n-2)
-            $("li:nth-of-type(5n-3)").addClass('mR120');
+            let clientW = ($(window).width());
+            if(clientW>1200){
+                $("li:nth-of-type(5n-2)").addClass('mR120');
+            }else if(clientW>768 && clientW<1200){
+                $("li:nth-of-type(5n-2)").addClass('mR60');
+            }else{
+                $("li:nth-of-type(5n-2)").addClass('mR0');
+            }
         }
     };
     $.ajax({
