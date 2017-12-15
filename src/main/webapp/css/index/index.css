@@ -83,6 +83,12 @@
 .dropdown-menu {
   min-width: 100px; }
 
+.help-block {
+  margin-bottom: 0; }
+
+.fa {
+  margin-right: 5px; }
+
 .index-content {
   margin-top: 60px; }
 
@@ -132,6 +138,10 @@
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
     .training-camp .training-camp-title h3 {
+      width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       line-height: 100px;
       color: #333; }
   .training-camp .teacher {
