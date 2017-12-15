@@ -8,7 +8,14 @@
 .input-txt {
   background: none;
 }
-
+.class-type{
+  line-height: 50px;
+}
+.class-type-img{
+  display: inline-block;
+  width: 100px;
+  height:50px;
+}
 @media screen and(max-width: 480px) {
   .create-wrap {
     width: 100%;
