@@ -15,6 +15,10 @@
   box-shadow: 0 5px 20px -1px #2e5eff;
 }
 
+.mR120 {
+  margin-right: 120px !important;
+}
+
 //点击编辑座位信息样式
 .edit {
   transition: .07s;
@@ -26,9 +30,11 @@
 input[disabled] {
   background: transparent;
 }
-.student-wrap{
-  padding-bottom:100px;
+
+.student-wrap {
+  padding-bottom: 100px;
 }
+
 //背景图
 .add-student-bg {
   height: 100%;
@@ -37,19 +43,6 @@ input[disabled] {
   background-size: cover;
 }
 
-//.edit-icon,.cancel-seat-icon{
-//  display: inline-block;
-//  width: 12px;
-//  height: 12px;
-//  margin-right:5px;
-//}
-//.edit-icon{
-//  background: url(../../img/edit.png) no-repeat center;
-//}
-//.cancel-seat-icon{
-//  background: url(../../img/delete.png) no-repeat center;
-//}
-//screen>1200 style
 .w {
   border-radius: 10px;
   @include wrap-show;
@@ -65,19 +58,13 @@ input[disabled] {
       float: left;
       width: 630px;
       background: #6ab7ff;
-      //height: 650px;
+      //height: 850px;
       @include border-left(10px);
 
       .seat-title {
         color: $fff;
       }
       .seat-list {
-        //.seat-left {
-        //  width: 200px;
-        //}
-        //.seat-right {
-        //  width: 300px;
-        //}
         li {
           float: left;
           margin: 0 20px 15px 20px;
@@ -140,7 +127,7 @@ input[disabled] {
     .seat {
       float: left;
       width: 570px;
-      height: 600px;
+      height: 700px;
       background: #6ab7ff;
       @include border-left(10px);
 
@@ -148,12 +135,6 @@ input[disabled] {
         color: $fff;
       }
       .seat-list {
-        //.seat-left {
-        //  width: 180px;
-        //}
-        //.seat-right {
-        //  width: 270px;
-        //}
         li {
           float: left;
           margin: 0 20px 15px 20px;
@@ -290,11 +271,3 @@ input[disabled] {
   margin-top: 5px;
 }
 
-.disable{
-  cursor: not-allowed;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  opacity: .65;
-  background: #eee url(../../img/forbidden.png) no-repeat center center;
-}
