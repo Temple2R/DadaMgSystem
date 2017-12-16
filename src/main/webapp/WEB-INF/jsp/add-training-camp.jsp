@@ -13,12 +13,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
     <link rel="stylesheet" href="<%=basePath %>css/base/base.css">
     <link rel="stylesheet" href="<%=basePath %>core/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="<%=basePath %>plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="<%=basePath %>css/base/common.css">
     <link rel="stylesheet" href="<%=basePath %>css/add-training-camp/add-training-camp.css">
     <link rel="stylesheet" href="<%=basePath %>css/user-manager/user-manager.css">
     <link rel="stylesheet" href="<%=basePath %>css/base/reset.css">
-    <link rel="stylesheet" href="<%=basePath %>font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="<%=basePath %>plugins/iChecks/skins/flat/blue.css" rel="stylesheet">
 </head>
 <body class="index-bg">
 <div class="container">
@@ -51,29 +50,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <a href="index.do"  class="btn btn-primary ml10 index-back" ><i class="fa fa-angle-left"></i>返回</a>
         </div>
     </header>
+    
+    
     <div class="row">
         <div class="create-wrap">
         <form action="toChgCamp.do"method="post">
             <input type="hidden" name="id" id="" value="${camp.id }"/>
-            <div class="input-bg mt20">
-                <span>教 师 编 号：</span>
-                <input type="text" class="input-txt" name="classroomNumber" value="${camp.classroomNumber }"  placeholder="请输入教师编号">
+            <div class="input-bg form-group">
+                <label>教 师 编 号：</label>
+                <input type="text" class="input-txt form-control" name="classroomNumber" value="${camp.classroomNumber }"  placeholder="请输入教师编号">
             </div>
-            <div class=" input-bg">
-                <span>教 师 姓 名：</span>
-                <input type="text" class="input-txt" name="teacherName" value="${camp.teacherName }" placeholder="请输入教师姓 名">
+            <div class="input-bg form-group">
+                <label>教 师 姓 名：</label>
+                <input type="text" class="input-txt form-control" name="teacherName" value="${camp.teacherName }" placeholder="请输入教师姓 名">
             </div>
-            <div class="input-bg">
-                <span>讲 师 电 话：</span>
-                <input type="text" class="input-txt" name="teacherPhone" value="${camp.teacherPhone }" placeholder="请输入教师电话">
+            <div class="input-bg form-group">
+                <label>讲 师 电 话：</label>
+                <input type="text" class="input-txt form-control" name="teacherPhone" value="${camp.teacherPhone }" placeholder="请输入教师电话">
             </div>
-            <div class="input-bg">
-                <span>所属产品线：</span>
-                <input type="text" class="input-txt" name="productLine" value="${camp.productLine }" placeholder="请输入所属产品线">
+            <div class="input-bg form-group">
+                <label>所属产品线：</label>
+                 <select name="productLine" id="product-line" class="form-control">
+                    <option value="UID" <c:if test="${camp.productLine =='UID'}"> selected='selected'</c:if>>UID</option>
+                    <option value="JSD" <c:if test="${camp.productLine =='JSD'}"> selected='selected'</c:if>>JSD</option>
+                    <option value="WEB" <c:if test="${camp.productLine=='WEB'}"> selected='selected'</c:if>>WEB</option>
+                    <option value="大数据" <c:if test="${camp.productLine=='大数据'}"> selected='selected'</c:if>>大数据</option>
+                 </select>
+               <%--  <input type="text" class="input-txt" name="productLine" value="${camp.productLine }" placeholder="请输入所属产品线"> --%>
             </div>
-            <div class="input-bg">
-                <span>班 级 人 数：</span>
-                <input type="text" class="input-txt" name="cadetNumber" value="${camp.cadetNumber==null?0:camp.cadetNumber }" placeholder="0" readonly="readonly">
+            <div class="input-bg form-group">
+                <label>班 级 人 数：</label>
+                <input type="text" class="input-txt form-control" name="cadetNumber" value="${camp.cadetNumber==null?0:camp.cadetNumber }" placeholder="0" readonly="readonly">
             </div>
             <%--<div class="input-bg">--%>
                 <%--<span>班 级 类 型：</span>--%>
@@ -84,12 +91,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="input-bg form-group class-type" id="j-class-type">
                 <label>班 级 类 型：</label>
                 <div class="dib">
-                    <input type="radio" name="iCheck" value="0">
-                    <img class="class-type-img" src="../../img/seat-1.png" alt="班级类型">
+                    <input type="radio" name="classType" value="1"<c:if test="${camp.classType=='0'}"> checked='checked'</c:if>>
+                    <img class="class-type-img" src="<%=basePath %>img/seat-1.png" alt="班级类型">
                 </div>
                 <div class="dib fr">
-                    <input type="radio" name="iCheck" value="1">
-                    <img class="class-type-img" src="../../img/seat-2.png" alt="班级类型">
+                    <input type="radio" name="classType" value="0" <c:if test="${camp.classType=='1'}"> checked='checked'</c:if>>
+                    <img class="class-type-img" src="<%=basePath %>img/seat-2.png" alt="班级类型">
                 </div>
             </div>
             <div class="text-center mt20">
@@ -103,11 +110,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <script src="<%=basePath %>core/jquery-1.11.3.js"></script>
-<script src="<%=basePath %>core/bootstrap/bootstrap.min.js"></script>
+<%-- <script src="<%=basePath %>core/bootstrap/bootstrap.min.js"></script>--%><script src="<%=basePath %>plugins/nicescroll/jquery.nicescroll.min.js"></script>
 <script src="<%=basePath %>plugins/nicescroll/jquery.nicescroll.min.js"></script>
 <script src="<%=basePath %>js/nicescroll.js"></script>
-<script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="<%=basePath %>plugins/iChecks/js/icheck.js"></script>
+<%-- <script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>--%>
+<%-- <script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>--%>
 <!-- <script>
     $(function () {
         //日历控件
@@ -125,9 +133,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script>
     $(function () {
         // 自定义checkbox
-        $(("#j-class-type input")).iCheck({
+         $(("#j-class-type input")).iCheck({
             radioClass: 'iradio_flat-blue',
-        });
+        }); 
 
 //        获取点击radio的值
         $(("#j-class-type input")).on('ifChecked', function(){

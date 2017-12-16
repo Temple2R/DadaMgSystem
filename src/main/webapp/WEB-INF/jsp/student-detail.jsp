@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="student-detail-txt">
                     <span>学员姓名：</span>
-                    <input type="text" class="js-student-name" disabled>
+                    <input type="text" class="js-student-name" maxlength="4" placeholder="给我个账号" disabled>
                 </div>
                 <div class="student-detail-txt">
                     <span>咨询师：</span>

@@ -88,11 +88,11 @@ $(function () {
                  console.log(list);
                  html +=
                  "<li class='list-unstyled item1' >"+
-                 "<section class='col-lg-3 col-md-6 col-sm-6 col-xs-12 index-item' data-id='"+list.id+"'>"+
+                 "<section class='col-lg-3 col-md-6 col-sm-6 col-xs-12 index-item' data='"+list.classType+"' data-id='"+list.id+"'>"+
                      "<div class='training-camp'>"+
                          "<div class='training-camp-img'></div>"+
                          "<div class='training-camp-title'>"+
-                            " <h3 class='pull-left'>"+list.classType+"</h3>"+
+                            " <h3 class='pull-left'>"+list.productLine+"</h3>"+
                              "<div class='action text-right mr10'>"+
                                  "<a href='findIdCamp.do?id="+list.id+"' class='btn btn-primary'><i class='fa fa-edit'></i>编辑</a>"+
                                  "<button class='btn btn-danger js-del-train-camp' data-id='"+list.id+"'><i class='fa fa-trash'></i>删除</button>"+
@@ -109,10 +109,10 @@ $(function () {
                                          "<span class=''>讲 师 电 话：</span>"+
                                          "<span>"+list.teacherPhone+"</span>"+
                                      "</div>"+
-                                     "<div class='teacher-item'>"+
+                                     /* "<div class='teacher-item'>"+
                                          "<span class=''>所属产品线：</span>"+
                                          "<span>"+list.productLine+"</span>"+
-                                    " </div>"+
+                                    " </div>"+ */
                                      "<div class='teacher-item'>"+
                                          "<span class=''>创 建 时 间：</span>"+
                                          "<span>"+list.createdTime+"</span>"+
@@ -137,8 +137,9 @@ $(function () {
              	 $(".action").show();
              }
              $(".index-item").click(function () {
-            	 var id=$(this).attr('data-id');
-         		location.href = "toCamp.do?id="+id;
+            	var id=$(this).attr('data-id');
+            	var classType=$(this).attr('data');
+         		location.href = "toCamp.do?id="+id+"&&classType="+classType;
          	 })
          	 //点击删除训练营
          	$(".js-del-train-camp").click(function (e) {
