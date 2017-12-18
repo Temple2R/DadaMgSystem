@@ -10,5 +10,5 @@ public interface ISeatService {
 	public Integer insertSeat(Cadet cadet,int trainingCampId);
 	public Integer updateSeat(Cadet cadet,int trainingCampId);
 	public Integer deleteSeat(Integer id);
-	public Integer deleteSeatByCadetId(Integer id);
+	public Integer deleteSeatByCadetId(Integer id,Integer trainingCampId);
 }

@@ -13,11 +13,15 @@ import cn.tedu.mgsystem.teacher.dao.SeatDao;
 import cn.tedu.mgsystem.teacher.entity.Cadet;
 import cn.tedu.mgsystem.teacher.entity.Seat;
 import cn.tedu.mgsystem.teacher.service.ISeatService;
+import cn.tedu.mgsystem.user.dao.TrainingCampDao;
+import cn.tedu.mgsystem.user.entity.TrainingCamp;
 @Transactional(rollbackFor=ServiceException.class)
 @Service
 public class SeatServiceImpl implements ISeatService{
 	@Autowired
 	private SeatDao dao;
+	@Autowired
+	private TrainingCampDao Tdao;
 	@Transactional(readOnly=true)
 	@Override
 	public List<Seat> findSeatById(Integer id) {
@@ -33,6 +37,10 @@ public class SeatServiceImpl implements ISeatService{
 		seat.setCadetId(cadet.getId());
 		seat.setSeatNumber(cadet.getSeatNumber());
 		seat.setCadetName(cadet.getName());
+		//训练营人数+1
+		TrainingCamp camp= Tdao.findTrainingCampByid(trainingCampId);
+		camp.setCadetNumber(camp.getCadetNumber()+1);//班级人数
+		Tdao.updateTrainingCamp(camp);
 		return dao.insertSeat(seat);
 	}
 	@Transactional(propagation=Propagation.REQUIRED,
@@ -60,9 +68,15 @@ public class SeatServiceImpl implements ISeatService{
 			isolation=Isolation.REPEATABLE_READ,
 			rollbackFor=ServiceException.class)
 	@Override
-	public Integer deleteSeatByCadetId(Integer id) {
+	public Integer deleteSeatByCadetId(Integer id,Integer trainingCampId) {
 		if(id==null) 
 			throw new ServiceException("不存在这个学生！");
+		//训练营人数-1
+		  TrainingCamp camp= Tdao.findTrainingCampByid(trainingCampId);
+		  int number=camp.getCadetNumber()-1;
+		  if(number<0) number=0;
+		  camp.setCadetNumber(number);//班级人数
+		  Tdao.updateTrainingCamp(camp);
 		return dao.deleteSeatByCadetId(id);
 	}
 

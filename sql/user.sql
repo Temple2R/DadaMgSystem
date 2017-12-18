@@ -41,7 +41,8 @@ CREATE TABLE `user` (
   `modifyUser` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+insert into user (account,password,name,position) 
+		values ('彭山莉','1234','彭山莉','管理员');
 -- ----------------------------
 -- Records of user
 -- ----------------------------

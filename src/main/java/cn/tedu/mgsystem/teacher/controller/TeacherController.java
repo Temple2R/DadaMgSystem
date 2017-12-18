@@ -63,9 +63,9 @@ public class TeacherController {
 	}
 	@RequestMapping("/toDelCadet.do")
 	@ResponseBody
-	public JsonResult dalCadet(int id){
+	public JsonResult dalCadet(int id,int trainingCampId){
 		cadetService.deleteCadet(id);
-		seatService.deleteSeatByCadetId(id);
+		seatService.deleteSeatByCadetId(id,trainingCampId);
 		return new JsonResult();
 	}
 	

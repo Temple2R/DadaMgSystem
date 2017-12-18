@@ -1,4 +1,5 @@
 <%@page pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -51,6 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <li><a href="logOut.do"><i class="fa  fa-sign-out"></i>退出登录</a></li>
                 </ul>
             </div>
+             <a href="index.do"  class="btn btn-primary ml10 index-back" ><i class="fa fa-angle-left"></i>返回</a>
         </div>
     </header>
     <div class="row">

@@ -146,12 +146,13 @@ $(()=> {
                     type: "post",
                     url: "toDelCadet.do",
                     data: {
-                        id: cadetId
+                        id: cadetId,
+                        trainingCampId:id
                     },
                     success: function (msg) {
                         if (msg.state == 1) {
                             alert("删除成功！")
-                            location.href = "toCamp.do?id=" + id;
+                            location.href = "toCamp.do?id=" + id+"&&classType="+classType;
                         }
                     }
                 });
@@ -174,7 +175,7 @@ $(()=> {
                 console.log($('#js-edit-seat-info').html());
                 if ($(".js-seat-num").val() == null || $(".js-seat-num").val() == "") {
                     alert("请选择座位！");
-                    location.href = "toCamp.do?id=" + id;
+                    location.href = "toCamp.do?id=" + id+"&&classType="+classType;
                 }
                 if ($('#js-edit-seat-info').html() == '编辑订座') {
                     var cadetId = $('#js-edit-seat-info').attr('data-id')
@@ -184,7 +185,7 @@ $(()=> {
                         $.post(url, params, function (result) {
                             console.log(result);
                             if (result.state == 1) {
-                                location.href = "toCamp.do?id=" + id;
+                                location.href = "toCamp.do?id=" + id+"&&classType="+classType;
                             } else {
                                 alert("创建失败");
                             }
@@ -195,7 +196,7 @@ $(()=> {
                         $.post(url, params, function (result) {
                             console.log(result);
                             if (result.state == 1) {
-                                location.href = "toCamp.do?id=" + id;
+                                location.href = "toCamp.do?id=" + id+"&&classType="+classType;
                             } else {
                                 alert("修改失败");
                             }
