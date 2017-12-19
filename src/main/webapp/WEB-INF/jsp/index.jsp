@@ -92,7 +92,7 @@ $(function () {
                      "<div class='training-camp'>"+
                          "<div class='training-camp-img'></div>"+
                          "<div class='training-camp-title'>"+
-                            " <h4 class='pull-left'>"+list.productLine+"</h4>"+
+                            " <h3 class='pull-left'>"+list.productLine+"</h3>"+
                              "<div class='action text-right mr10'>"+
                                  "<a href='findIdCamp.do?id="+list.id+"' class='btn btn-primary mr5'><i class='fa fa-edit'></i>编辑</a>"+
                                  "<button class='btn btn-danger js-del-train-camp' data-id='"+list.id+"'><i class='fa fa-trash'></i>删除</button>"+

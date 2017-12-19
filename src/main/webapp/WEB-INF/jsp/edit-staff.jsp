@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <!--添加员工dialog-->
 <div class="form-group">
-<form action='toChgStaff.do' method="post" id="formPost">
+<form action='toChgStaff.do' method="post" id="formPost" class="js-form-validate">
     <input type="hidden" name="id"  value="${staff.id }"/> 
     <div class="form-group">
         <label for="uname" class=" control-label">姓名/账号:</label>
@@ -111,6 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath %>js/nicescroll.js"></script>
 <script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <script src="<%=basePath %>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src=""></script>
 <script type="text/javascript">
 //提交表单
 $(".btn-primary").click(function(){
