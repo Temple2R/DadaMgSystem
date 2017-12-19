@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          </c:if>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ${sessionScope.user.name}<span class="caret"></span>
+                    ${sessionScope.user.account}<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="tochangePwd.do"><i class="fa fa-edit"></i>修改密码</a></li>
