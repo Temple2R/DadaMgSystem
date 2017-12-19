@@ -24,6 +24,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <label class="radio-inline">
                 <input type="radio" name="sex" <c:if test="${staff.sex=='女'}"> checked='checked'</c:if> value="女"> 女
             </label>
+
+
+
+
             <label class="radio-inline">
                 <input type="radio" name="sex" <c:if test="${staff.sex=='保密'}"> checked='checked'</c:if>  value="保密"> 保密
             </label>
