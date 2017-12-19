@@ -41,19 +41,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <input type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码">
         </div>
     </div>
-    <div class="form-group">
-        <label for="job" class="col-sm-4 control-label">职&emsp;&emsp;位:</label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="position" value="${staff.position }" placeholder="给我个职位">
-        </div>
+
+    <div class="input-bg form-group">
+        <label>职位：</label>
+        <select name="productLine" id="product-line" class="form-control">
+            <option value="管理员" <c:if test="${staff.position =='管理员'}"> selected='selected'</c:if>>管理员</option>
+            <option value="讲师" <c:if test="${staff.position =='讲师'}"> selected='selected'</c:if>>讲师</option>
+            <option value="职业发展顾问" <c:if test="${staff.position=='职业发展顾问'}"> selected='selected'</c:if>>职业发展顾问</option>
+            <option value="课程顾问" <c:if test="${staff.position=='课程顾问'}"> selected='selected'</c:if>>课程顾问</option>
+        </select>
     </div>
-     <div class="form-group">
-        <label for="technical-direction" class="col-sm-4 control-label">技术方向:</label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="skillDirection" value="${staff.skillDirection }"
-                   placeholder="我是学什么的">
-        </div>
-    </div> --%>
+
+    <%--<div class="form-group">--%>
+        <%--<label for="job" class="col-sm-4 control-label">职&emsp;&emsp;位:</label>--%>
+        <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" name="position" value="${staff.position }" placeholder="给我个职位">--%>
+        <%--</div>--%>
+    <%--</div>--%>
+     <%--<div class="form-group">--%>
+        <%--<label for="technical-direction" class="col-sm-4 control-label">技术方向:</label>--%>
+        <%--<div class="col-sm-8">--%>
+            <%--<input type="text" class="form-control" name="skillDirection" value="${staff.skillDirection }"--%>
+                   <%--placeholder="我是学什么的">--%>
+        <%--</div>--%>
+         <%----%>
+    <%--</div>--%>
     <div class="form-group">
         <label for="entry-time" class="col-sm-4 control-label">入职时间:</label>
         <div class="col-sm-8">
