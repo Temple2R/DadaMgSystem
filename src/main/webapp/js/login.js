@@ -40,7 +40,6 @@ $(()=> {
             }
         });
     });
-
     //点击图标切换显示密码
     $("#js-browse").click(function () {
         if (flag) {
