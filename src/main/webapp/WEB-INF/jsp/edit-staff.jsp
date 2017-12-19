@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <select name="position" id="product-line" class="form-control">
             <option value="管理员" <c:if test="${staff.position =='管理员'}"> selected='selected'</c:if>>管理员</option>
             <option value="讲师" <c:if test="${staff.position =='讲师'}"> selected='selected'</c:if>>讲师</option>
-            <option value="职业发展顾问" <c:if test="${staff.position=='职业发展顾问'}"> selected='selected'</c:if>>职业发展顾问</option>
+            <option value="咨询师" <c:if test="${staff.position=='咨询师'}"> selected='selected'</c:if>>职业发展顾问</option>
             <option value="课程顾问" <c:if test="${staff.position=='课程顾问'}"> selected='selected'</c:if>>课程顾问</option>
         </select>
     </div>
