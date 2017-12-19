@@ -1,7 +1,7 @@
 /**
  * Created by jian on 2017/10/26.
  */
-var BaseFormValidation = function () {
+var editStaffForm = function () {
     var initValidationMaterial = function () {
         $('.js-form-validate').validate({
             errorClass: 'help-block text-right animated fadeInDown',
@@ -18,7 +18,7 @@ var BaseFormValidation = function () {
                 $(e).closest('.help-block').remove();
             },
             rules: {
-                'uname': {
+                'account': {
                     required: true,
                     minlength: 2,
                     maxlength: 20
@@ -30,7 +30,7 @@ var BaseFormValidation = function () {
                 }
             },
             messages: {
-                'uname':{
+                'account':{
                     required: '账号不能为空',
                     minlength: '账号不能小于2个字符',
                     maxlength: '账号不能大于20个字符'
@@ -53,6 +53,6 @@ var BaseFormValidation = function () {
 }();
 
 $(function () {
-    BaseFormValidation.init();
+    editStaffForm.init();
 });
 
