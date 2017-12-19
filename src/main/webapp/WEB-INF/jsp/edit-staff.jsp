@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="form-group">
         <label for="uname" class=" control-label">姓名/账号:</label>
         <div >
-            <input type="text" class="form-control" name="name" value="${staff.name }" placeholder="给我个名字" maxlength="10">
+            <input id="uname" type="text" class="form-control" name="account" value="${staff.account }" placeholder="给我个名字" maxlength="10">
         </div>
     </div>
     <div class="form-group">
@@ -38,13 +38,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="form-group">
         <label for="login-pwd" class=" control-label">登录密码:</label>
         <div class="">
-            <input type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码" maxlength="10">
+            <input id="login-pwd" type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码" maxlength="10">
         </div>
     </div>
 
     <div class="input-bg form-group">
         <label>职位：</label>
-        <select name="productLine" id="product-line" class="form-control">
+        <select name="position" id="product-line" class="form-control">
             <option value="管理员" <c:if test="${staff.position =='管理员'}"> selected='selected'</c:if>>管理员</option>
             <option value="讲师" <c:if test="${staff.position =='讲师'}"> selected='selected'</c:if>>讲师</option>
             <option value="职业发展顾问" <c:if test="${staff.position=='职业发展顾问'}"> selected='selected'</c:if>>职业发展顾问</option>
@@ -98,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="form-group">
         <label for="email" class=" control-label">邮&emsp;&emsp;箱:</label>
         <div class="">
-            <input type="email" class="form-control" name="email"value="${staff.email }" placeholder="我的易麦鸥是什么">
+            <input id="email" type="email" class="form-control" name="email"value="${staff.email }" placeholder="我的易麦鸥是什么">
         </div>
     </div> 
      
