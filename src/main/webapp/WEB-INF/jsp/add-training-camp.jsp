@@ -68,8 +68,8 @@
                 <%--</div>--%>
 
                 <div class="input-bg form-group">
-                    <label>职位：</label>
-                    <select name="productLine" id="teacher-name" class="form-control">
+                    <label>讲师：</label>
+                    <select name="teacherName" id="teacher-name" class="form-control">
                         <option value="张华生" <c:if test="${camp.teacherName =='张华生'}"> selected='selected'</c:if>>张华生
                         </option>
                         <option value="韦粤豪" <c:if test="${camp.teacherName =='韦粤豪'}"> selected='selected'</c:if>>韦粤豪
