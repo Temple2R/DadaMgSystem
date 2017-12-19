@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <input type="hidden" name="id"  id="id"/>
 
-                <div class="hidden js-select-stage mb10 form-group">
+                <div class="hidden js-select-stage mb10 form-group clearfix">
                     <span class="w100 text-right fl" style="display: inline-block">学员类型：</span>
                     <select class="dropdown js-student-type form-control fl" style="width: 153px">
                         <option value="">A</option>
@@ -106,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <span>信息来源：</span>
                     <input type="text"  class="js-source" disabled maxlength="10">
                 </div>
-                <div class="hidden js-select-stage form-group" >
+                <div class="hidden js-select-stage form-group clearfix" >
                     <span class="w100 text-right fl" style="display: inline-block">信息来源：</span>
                     <select class="dropdown form-control fl" id="tt" style="width: 153px">
                         <option value="求职">求职</option>
@@ -127,7 +127,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <input type="text"  class="js-stage" disabled maxlength="10">
 
                 </div>
-                <div class="hidden js-select-stage form-group" >
+                <div class="hidden js-select-stage form-group clearfix" >
                     <span class="w100 text-right fl" style="display: inline-block">阶&emsp;&emsp;段：</span>
                     <select class="dropdown form-control fl" id="dd" style="width: 153px">
                         <option value="试听">试听</option>
