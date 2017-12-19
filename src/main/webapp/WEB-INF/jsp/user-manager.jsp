@@ -67,11 +67,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <span>全选</span>
                         </div>
                     </th>
-                    <th>员工号</th>
-                    <th>姓名</th>
+                    <th>姓名/账号</th>
                     <th>性别</th>
-                    <th>技术方向</th>
-                    <th>部门</th>
                     <th>职位</th>
                     <th>入职时间</th>
                     <th>邮箱</th>

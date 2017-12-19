@@ -61,7 +61,6 @@ $(()=> {
             for(let n=0;n<=leftNum;n++){
             	var tem=5*n-2-classType;
 	            if(clientW>1200){
-	            	debugger
 	                $("li:nth-of-type("+tem+")").addClass('mR120');
 	            }else if(clientW>768 && clientW<1200){
 	                $("li:nth-of-type("+tem+")").addClass('mR60');
@@ -217,5 +216,5 @@ $(()=> {
     // 座位点击事件
 
     obj.editSeatInfo();
-    obj.showClassRoom(30,0);
+    obj.showClassRoom(35,0);
 });

@@ -18,11 +18,8 @@ $(function () {
                 <td>
                     <div><input type="checkbox" class="checkbox" name='checkItem' value='${list.id}'></div>
                 </td>
-                <td>${list.enumber}</td>
                 <td>${list.name}</td>
                 <td>${list.sex}</td>
-                <td>${list.skillDirection}</td>
-                <td>${list.deptno}</td>
                 <td>${list.position}</td>
                 <td>${list.entryTime}</td>
                 <td>${list.email}</td>
