@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <form action='toChgStaff.do' method="post" id="formPost">
     <input type="hidden" name="id"  value="${staff.id }"/> 
     <div class="form-group">
-        <label for="uname" class="col-sm-4 control-label">姓&emsp;&emsp;名:</label>
+        <label for="uname" class="col-sm-4 control-label">姓名/账号:</label>
         <div class="col-sm-8">
             <input type="text" class="form-control" name="name" value="${staff.name }" placeholder="给我个名字">
         </div>
