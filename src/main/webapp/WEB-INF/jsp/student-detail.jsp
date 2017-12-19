@@ -84,27 +84,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="student-detail-txt">
                     <span>学员姓名：</span>
-                    <input type="text" class="js-student-name" maxlength="4" placeholder="给我个名字" disabled>
+                    <input type="text" class="js-student-name" maxlength="10" placeholder="给我个名字" disabled>
                 </div>
                 <div class="student-detail-txt">
                     <span>咨询师：</span>
-                    <input type="text" class="js-teacher-name" disabled>
+                    <input type="text" class="js-teacher-name" disabled maxlength="10">
                 </div>
                 <div class="student-detail-txt">
                     <span>学&emsp;&emsp;历：</span>
-                    <input type="text"  class="js-certificate" disabled>
+                    <input  type="text"  class="js-certificate" disabled maxlength="10">
                 </div>
                 <div class="student-detail-txt">
                     <span>专&emsp;&emsp;业：</span>
-                    <input type="text"  class="js-major" disabled>
+                    <input type="text"  class="js-major" disabled maxlength="10">
                 </div>
                 <div class="student-detail-txt">
                     <span>是否有基础：</span>
-                    <input type="text"  class="js-is-primary" disabled>
+                    <input type="text"  class="js-is-primary" disabled maxlength="10">
                 </div>
                 <div class="student-detail-txt">
                     <span>信息来源：</span>
-                    <input type="text"  class="js-source" disabled>
+                    <input type="text"  class="js-source" disabled maxlength="10">
                 </div>
                 <div class="hidden js-select-stage form-group" >
                     <span class="w100 text-right " style="display: inline-block">信息来源：</span>
@@ -116,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="student-detail-txt">
                     <span>面资情况：</span>
-                    <input type="text" class="js-situation" disabled>
+                    <input type="text" class="js-situation" disabled maxlength="10">
                 </div>
                 <div class="student-detail-txt">
                     <span>学习时长：</span>
@@ -124,7 +124,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="student-detail-txt">
                     <span>阶&emsp;&emsp;段：</span>
-                    <input type="text"  class="js-stage" disabled>
+                    <input type="text"  class="js-stage" disabled maxlength="10">
 
                 </div>
                 <div class="hidden js-select-stage form-group" >

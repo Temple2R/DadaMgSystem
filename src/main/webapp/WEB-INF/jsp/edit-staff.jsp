@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="form-group">
         <label for="uname" class="col-sm-4 control-label">姓名/账号:</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" name="name" value="${staff.name }" placeholder="给我个名字">
+            <input type="text" class="form-control" name="name" value="${staff.name }" placeholder="给我个名字" maxlength="10">
         </div>
     </div>
     <div class="form-group">
@@ -32,13 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="form-group">
         <label for="login-account" class="col-sm-4 control-label" >登录账号:</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" name="account" value="${staff.account }" placeholder="给我个账号">
+            <input type="text" class="form-control" name="account" value="${staff.account }" placeholder="给我个账号" maxlength="10">
         </div>
     </div>
     <div class="form-group">
         <label for="login-pwd" class="col-sm-4 control-label">登录密码:</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码">
+            <input type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码" maxlength="10">
         </div>
     </div>
 
