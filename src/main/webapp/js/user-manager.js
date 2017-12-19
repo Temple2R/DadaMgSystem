@@ -18,7 +18,7 @@ $(function () {
                 <td>
                     <div><input type="checkbox" class="checkbox" name='checkItem' value='${list.id}'></div>
                 </td>
-                <td>${list.name}</td>
+                <td>${list.account}</td>
                 <td>${list.sex}</td>
                 <td>${list.position}</td>
                 <td>${list.entryTime}</td>

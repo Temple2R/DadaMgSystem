@@ -6,18 +6,18 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!--添加员工dialog-->
-<div class="form-horizontal">
+<div class="form-group">
 <form action='toChgStaff.do' method="post" id="formPost">
     <input type="hidden" name="id"  value="${staff.id }"/> 
     <div class="form-group">
-        <label for="uname" class="col-sm-4 control-label">姓名/账号:</label>
-        <div class="col-sm-8">
+        <label for="uname" class=" control-label">姓名/账号:</label>
+        <div >
             <input type="text" class="form-control" name="name" value="${staff.name }" placeholder="给我个名字" maxlength="10">
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-4 control-label">性&emsp;&emsp;别:</label>
-        <div class="col-sm-8">
+        <label class="control-label">性&emsp;&emsp;别:</label>
+        <div class="">
             <label class="radio-inline">
                 <input type="radio" name="sex" <c:if test="${staff.sex=='男'}"> checked='checked'</c:if>  value="男"> 男
             </label>
@@ -29,15 +29,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </label>
         </div>
     </div>
-     <div class="form-group">
-        <label for="login-account" class="col-sm-4 control-label" >登录账号:</label>
-        <div class="col-sm-8">
-            <input type="text" class="form-control" name="account" value="${staff.account }" placeholder="给我个账号" maxlength="10">
-        </div>
-    </div>
+     <%--<div class="form-group">--%>
+        <%--<label for="login-account" class=" control-label" >登录账号:</label>--%>
+        <%--<div class="">--%>
+            <%--<input type="text" class="form-control" name="account" value="${staff.account }" placeholder="给我个账号" maxlength="10">--%>
+        <%--</div>--%>
+    <%--</div>--%>
     <div class="form-group">
-        <label for="login-pwd" class="col-sm-4 control-label">登录密码:</label>
-        <div class="col-sm-8">
+        <label for="login-pwd" class=" control-label">登录密码:</label>
+        <div class="">
             <input type="text" class="form-control" name="password" value="${staff.password }"placeholder="给我个密码" maxlength="10">
         </div>
     </div>
@@ -53,14 +53,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 
     <%--<div class="form-group">--%>
-        <%--<label for="job" class="col-sm-4 control-label">职&emsp;&emsp;位:</label>--%>
-        <%--<div class="col-sm-8">--%>
+        <%--<label for="job" class=" control-label">职&emsp;&emsp;位:</label>--%>
+        <%--<div class="">--%>
             <%--<input type="text" class="form-control" name="position" value="${staff.position }" placeholder="给我个职位">--%>
         <%--</div>--%>
     <%--</div>--%>
      <%--<div class="form-group">--%>
-        <%--<label for="technical-direction" class="col-sm-4 control-label">技术方向:</label>--%>
-        <%--<div class="col-sm-8">--%>
+        <%--<label for="technical-direction" class=" control-label">技术方向:</label>--%>
+        <%--<div class="">--%>
             <%--<input type="text" class="form-control" name="skillDirection" value="${staff.skillDirection }"--%>
                    <%--placeholder="我是学什么的">--%>
         <%--</div>--%>
@@ -68,36 +68,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <%--</div>--%>
     <div class="form-group">
-        <label for="entry-time" class="col-sm-4 control-label">入职时间:</label>
-        <div class="col-sm-8">
+        <label for="entry-time" class=" control-label">入职时间:</label>
+        <div class="">
         	<fmt:formatDate value="${staff.entryTime }" pattern="yyyy-MM-dd" var="time"/>
             <input required="true" type="text" class="form-control form-datetime"  name="entryTime" value="${time }" placeholder="我什时候进来的">
         </div>
     </div>
    <%--<div class="form-group">--%>
-        <%--<label for="relution" class="col-sm-4 control-label">部&emsp;&emsp;门:</label>--%>
-        <%--<div class="col-sm-8">--%>
+        <%--<label for="relution" class=" control-label">部&emsp;&emsp;门:</label>--%>
+        <%--<div class="">--%>
             <%--<input type="text" class="form-control" name="deptno" value="${staff.deptno }"--%>
                    <%--placeholder="我属于哪里">--%>
         <%--</div>--%>
     <%--</div>--%>
 	
     <%--<div class="form-group">--%>
-        <%--<label for="staff-num" class="col-sm-4 control-label">员&nbsp;&nbsp;工&nbsp;&nbsp;号:</label>--%>
-        <%--<div class="col-sm-8">--%>
+        <%--<label for="staff-num" class=" control-label">员&nbsp;&nbsp;工&nbsp;&nbsp;号:</label>--%>
+        <%--<div class="">--%>
             <%--<input type="number" class="form-control" name="enumber" value="${staff.enumber }" placeholder="给我个编号" require>--%>
         <%--</div>--%>
     <%--</div>--%>
     
     <%--<div class="form-group">--%>
-        <%--<label for="phone" class="col-sm-4 control-label">联系电话:</label>--%>
-        <%--<div class="col-sm-8">--%>
+        <%--<label for="phone" class=" control-label">联系电话:</label>--%>
+        <%--<div class="">--%>
             <%--<input type="phone" class="form-control" name="userPhone" value="${staff.userPhone }"placeholder="我的电话是什么" require>--%>
         <%--</div>--%>
     <%--</div>--%>
      <div class="form-group">
-        <label for="email" class="col-sm-4 control-label">邮&emsp;&emsp;箱:</label>
-        <div class="col-sm-8">
+        <label for="email" class=" control-label">邮&emsp;&emsp;箱:</label>
+        <div class="">
             <input type="email" class="form-control" name="email"value="${staff.email }" placeholder="我的易麦鸥是什么">
         </div>
     </div> 
