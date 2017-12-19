@@ -116,12 +116,12 @@
                     <label>班 级 类 型：</label>
 
                     <div class="dib">
-                        <input type="radio" name="classType" value="1"<c:if test="${camp.classType=='0'}">
+                        <input type="radio" name="classType" value="1"<c:if test="${camp.classType=='1'}">
                                checked='checked'</c:if>>
                         <img class="class-type-img" src="<%=basePath %>img/seat-1.png" alt="班级类型">
                     </div>
                     <div class="dib fr">
-                        <input type="radio" name="classType" value="0" <c:if test="${camp.classType=='1'}">
+                        <input type="radio" name="classType" value="0" <c:if test="${camp.classType=='0'}">
                                checked='checked'</c:if>>
                         <img class="class-type-img" src="<%=basePath %>img/seat-2.png" alt="班级类型">
                     </div>

@@ -2,6 +2,7 @@ package cn.tedu.mgsystem.user.service.impl;
 
 import java.util.List;
 
+import cn.tedu.mgsystem.user.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,8 @@ import cn.tedu.mgsystem.user.service.ICampService;
 public class CampServiceImpl implements ICampService{
 	@Autowired
 	TrainingCampDao dao;
+	@Autowired
+	UserDao Udao;
 	/**
 	 * 查询所有的训练营
 	 */
@@ -24,7 +27,11 @@ public class CampServiceImpl implements ICampService{
 	}
 	@Override
 	public int updateTrainingCamp(TrainingCamp camp) {
-		
+		String teacher=camp.getTeacherName();
+		String phone=Udao.findPhoneByAccount(teacher);
+		if(phone!=null){
+			camp.setTeacherPhone(phone);
+		}
 		return dao.updateTrainingCamp(camp);
 	}
 	@Override
@@ -34,7 +41,11 @@ public class CampServiceImpl implements ICampService{
 	}
 	@Override
 	public int insertTrainingCamp(TrainingCamp camp) {
-		
+		String teacher=camp.getTeacherName();
+		String phone=Udao.findPhoneByAccount(teacher);
+		if(phone!=null){
+			camp.setTeacherPhone(phone);
+		}
 		return dao.insertTrainingCamp(camp);
 	}
 	/**根据id查找对应的训练营*/

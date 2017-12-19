@@ -89,12 +89,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <%--</div>--%>
     <%--</div>--%>
     
-    <%--<div class="form-group">--%>
-        <%--<label for="phone" class=" control-label">联系电话:</label>--%>
-        <%--<div class="">--%>
-            <%--<input type="phone" class="form-control" name="userPhone" value="${staff.userPhone }"placeholder="我的电话是什么" require>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+    <div class="form-group">
+        <label for="phone" class=" control-label">联系电话:</label>
+        <div class="">
+            <input type="phone" class="form-control" name="userPhone" value="${staff.userPhone }"placeholder="我的电话是什么" require>
+        </div>
+    </div>
      <div class="form-group">
         <label for="email" class=" control-label">邮&emsp;&emsp;箱:</label>
         <div class="">

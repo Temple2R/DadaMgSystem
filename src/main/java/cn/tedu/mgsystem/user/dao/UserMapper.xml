@@ -4,6 +4,10 @@
 	<select id="findAllTeacher" resultType="cn.tedu.mgsystem.user.entity.User">
 		select * from user WHERE POSITION!='管理员'
 	</select>
+	<select id="findPhoneByAccount" parameterType="string"
+			resultType="string">
+		select userPhone from user where account=#{account}
+	</select>
 	<select id="findByAccount" parameterType="string"
 		resultType="cn.tedu.mgsystem.user.entity.User">
 		select * from user where account=#{account}

@@ -6,6 +6,7 @@ import java.util.Map;
 import cn.tedu.mgsystem.user.entity.User;
 
 public interface IUserService {
+	public String findPhoneByAccount(String account);
 	public User checkLogin(String username,String pwd);
 	public List<User> findAllTeacher();
 	public User UpdateUser(User user);

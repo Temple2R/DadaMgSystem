@@ -96,6 +96,9 @@ public class UserServiceImpl implements IUserService{
 			map.put("pageObject", pageObject);
 			return map;
 		}
-		
-		
+
+	@Override
+	public String findPhoneByAccount(String account) {
+		return dao.findPhoneByAccount(account);
+	}
 }
