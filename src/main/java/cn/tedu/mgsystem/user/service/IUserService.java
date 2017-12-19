@@ -9,6 +9,7 @@ public interface IUserService {
 	public String findPhoneByAccount(String account);
 	public User checkLogin(String username,String pwd);
 	public List<User> findAllTeacher();
+	public List<User> findAllLectuer();
 	public User UpdateUser(User user);
 	public int insertUser(User user);
 	public User findById(Integer id);

@@ -1,7 +1,9 @@
 @charset "UTF-8";
 .w {
   width: 1000px; }
-
+span{
+  line-height: 34px;
+}
 .header {
   height: 100px;
   line-height: 100px; }
@@ -153,7 +155,8 @@ input[disabled] {
       float: left;
       text-align: right;
       width: 100px;
-      margin-right: 10px; }
+      margin-right: 10px;
+    line-height: 34px}
     .student-wrap .student-detail-txt input {
       float: left;
       border: none;
@@ -199,7 +202,7 @@ input[disabled] {
       float: left;
       text-align: right;
       width: 100px;
-      margin-right: 10px; }
+      margin-right: 10px;line-height: 34px }
     .student-wrap .student-detail-txt input {
       float: left;
       border: none;
@@ -250,7 +253,7 @@ input[disabled] {
         float: left;
         text-align: right;
         width: 100px;
-        margin-right: 10px; }
+        margin-right: 10px;line-height: 34px }
       .student-wrap .student-detail .student-detail-txt input {
         float: left;
         outline: none;

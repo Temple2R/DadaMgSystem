@@ -70,15 +70,18 @@
                 <div class="input-bg form-group">
                     <label>讲师：</label>
                     <select name="teacherName" id="teacher-name" class="form-control">
-                        <option value="张华生" <c:if test="${camp.teacherName =='张华生'}"> selected='selected'</c:if>>张华生
-                        </option>
+                        <c:forEach items="${requestScope.lectuer}" var="person">
+                            <option value="${person.account}" <c:if test="${camp.teacherName }==${person.account}"> selected='selected'</c:if>>${person.account}
+                            </option>
+                        </c:forEach>
+<%--
                         <option value="韦粤豪" <c:if test="${camp.teacherName =='韦粤豪'}"> selected='selected'</c:if>>韦粤豪
                         </option>
                         <option value="张华" <c:if test="${camp.teacherName=='张华'}"> selected='selected'</c:if>>
                             张华
                         </option>
                         <option value="龚桥平" <c:if test="${camp.teacherName=='龚桥平'}"> selected='selected'</c:if>>龚桥平
-                        </option>
+                        </option>--%>
                     </select>
                 </div>
 

@@ -30,6 +30,12 @@ public class UserServiceImpl implements IUserService{
 			}
 			return user;
 		}
+		/*
+		查询所有讲师
+		 */
+		public List<User> findAllLectuer() {
+			return  dao.findAllLectuer();
+		}
 		/*查询所有老师*/
 		@Override
 		public List<User> findAllTeacher() {

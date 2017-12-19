@@ -12,6 +12,7 @@ import cn.tedu.mgsystem.user.entity.User;
 public interface UserDao {
 	public String findPhoneByAccount(String account);
 	public User findByAccount(String account);
+	public List<User> findAllLectuer();
 	public List<User> findAllTeacher();
 //	public List<String> findUserPermissions(Integer userId);--保留
 	public String findPositionById(Integer userId);

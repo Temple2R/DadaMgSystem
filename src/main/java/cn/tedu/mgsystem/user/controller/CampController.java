@@ -1,9 +1,12 @@
 package cn.tedu.mgsystem.user.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import cn.tedu.mgsystem.user.entity.User;
+import cn.tedu.mgsystem.user.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,9 @@ import cn.tedu.mgsystem.user.service.impl.CampServiceImpl;
 public class CampController {
 	@Autowired
 	private CampServiceImpl campService;
+	@Autowired
+	private UserServiceImpl userService;
+
 	@RequestMapping("/findCamp.do")
 	@ResponseBody
 	public JsonResult findCamp(){
@@ -29,6 +35,8 @@ public class CampController {
 	public String toAddCamp(HttpServletRequest request){
 		if(request.getAttribute("camp")!=null)
 			request.removeAttribute("camp");
+		List<User> list=userService.findAllLectuer();
+		request.setAttribute("lectuer",list);
 		System.out.println("添加训练营到了！");
 		return "jsp/add-training-camp";
 	}
