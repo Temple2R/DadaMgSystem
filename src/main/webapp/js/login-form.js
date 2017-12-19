@@ -20,7 +20,7 @@ var BaseFormValidation = function () {
             rules: {
                 'uname': {
                     required: true,
-                    minlength: 6,
+                    minlength: 2,
                     maxlength: 20
                 },
                 'password': {
@@ -32,7 +32,7 @@ var BaseFormValidation = function () {
             messages: {
                 'uname':{
                     required: '账号不能为空',
-                    minlength: '账号不能小于6个字符',
+                    minlength: '账号不能小于2个字符',
                     maxlength: '账号不能大于20个字符'
                 } ,
                 'password': {
